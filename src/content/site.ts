@@ -12,7 +12,10 @@ export const topNav = [
   { href: "/blog", label: "ブログ" },
 ];
 
-export type SidebarSection = { title: string; items: { href: string; label: string }[] };
+export type SidebarSection = {
+  title: string;
+  items: { href: string; label: string }[];
+};
 
 export const learnSidebar: SidebarSection[] = [
   {
@@ -43,32 +46,24 @@ export const communitySidebar: SidebarSection[] = [
 ];
 
 export type Member = {
-  name: string;
   role: string;
-  bio: string;
-  github: string; // GitHubのユーザー名。アイコンもここから取得する
-  links?: { label: string; href: string }[]; // SNSなど
+  github: string; // GitHubのユーザー名またはプロフィールURL。名前・アイコン・自己紹介・SNSはGitHubから自動取得
 };
 
-// 会則6条の役職。TODO: 実際のメンバー情報に差し替える（サンプル）
+// 会則6条の役職。github が空の枠は「未定」と表示される
 // 会則5条「名簿の非公開」に注意：掲載は本人の同意を得た人だけにする
 export const officers: Member[] = [
-  {
-    name: "代表の名前",
-    role: "代表",
-    bio: "サークル全体の運営と対外的な窓口を担当しています。",
-    github: "SAK-Game-Development-Department",
-    links: [
-      { label: "X", href: "https://x.com/" },
-      { label: "Zenn", href: "https://zenn.dev/" },
-    ],
-  },
-  { name: "副代表の名前", role: "副代表", bio: "総会の運営やメンバーのサポートを担当しています。", github: "SAK-Game-Development-Department" },
-  { name: "開発責任者の名前", role: "開発責任者", bio: "サークルの開発プロジェクトと共有リポジトリを管理しています。", github: "SAK-Game-Development-Department" },
+  { role: "代表", github: "" },
+  { role: "副代表", github: "" },
+  { role: "開発責任者", github: "" },
 ];
 
 export type Post = { date: string; title: string; summary: string };
 
 export const posts: Post[] = [
-  { date: "2026-11-01", title: "公式サイトを公開しました", summary: "サークルの活動や作品を紹介する公式サイトを公開しました。" },
+  {
+    date: "2026-11-01",
+    title: "公式サイトを公開しました",
+    summary: "サークルの活動や作品を紹介する公式サイトを公開しました。",
+  },
 ];
