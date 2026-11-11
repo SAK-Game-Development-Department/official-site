@@ -123,12 +123,12 @@ export default function Home() {
       </Section>
 
       <Section title="最新のお知らせ" wash>
-        <div className="grid md:grid-cols-3 gap-6 mt-12">
+        <div className="flex flex-wrap justify-center gap-6 mt-12">
           {posts.map((p) => (
             <Link
               key={p.title}
               href="/blog"
-              className="block p-6 rounded-2xl bg-wash dark:bg-wash-dark shadow-sm hover:shadow-md ring-1 ring-border dark:ring-border-dark"
+              className="block w-full md:w-80 p-6 rounded-2xl bg-wash dark:bg-wash-dark shadow-sm hover:shadow-md ring-1 ring-border dark:ring-border-dark"
             >
               <time className="text-sm text-secondary dark:text-secondary-dark">
                 {p.date}
