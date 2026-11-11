@@ -67,13 +67,6 @@ export const officers: Member[] = [
   { name: "開発責任者の名前", role: "開発責任者", bio: "サークルの開発プロジェクトと共有リポジトリを管理しています。", github: "SAK-Game-Development-Department" },
 ];
 
-export const leaders: Member[] = [
-  { name: "リーダーの名前", role: "ゲーム開発リーダー", bio: "ゲームジャムやコンテストへの出場チームを取りまとめています。", github: "SAK-Game-Development-Department" },
-  { name: "リーダーの名前", role: "AIリーダー", bio: "機械学習の勉強会と論文執筆を取りまとめています。", github: "SAK-Game-Development-Department" },
-  { name: "リーダーの名前", role: "情報セキュリティリーダー", bio: "CTFへの参加と勉強会を取りまとめています。", github: "SAK-Game-Development-Department" },
-  { name: "リーダーの名前", role: "組み込みリーダー", bio: "マイコンやハードウェアを使った制作を取りまとめています。", github: "SAK-Game-Development-Department" },
-];
-
 export type Post = { date: string; title: string; summary: string };
 
 export const posts: Post[] = [

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { officers, leaders, type Member } from "@/content/site";
+import { officers, type Member } from "@/content/site";
 
 export const metadata = { title: "メンバー紹介" };
 
@@ -31,14 +31,10 @@ export default function Page() {
     <>
       <h1>メンバー紹介</h1>
       <p className="intro">
-        Ai×Game開発部は、役員と各分野のリーダーを中心に運営されています。
+        Ai×Game開発部は、以下の役員を中心に運営されています。
         運営体制について詳しくは<Link href="/community/rules#organization">会則</Link>をご覧ください。
       </p>
-      <h2>役員</h2>
       {officers.map((m, i) => <TeamMember key={i} m={m} />)}
-      <h2>分野リーダー</h2>
-      <p>各分野の有志の取りまとめ役です。興味のある分野があれば、気軽に声をかけてください。</p>
-      {leaders.map((m, i) => <TeamMember key={i} m={m} />)}
     </>
   );
 }
