@@ -40,3 +40,4 @@ body {
 .doc a { @apply text-link dark:text-link-dark border-b border-link/30 hover:border-link; }
 .doc code { @apply font-mono text-[0.9em] bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark px-1.5 py-0.5 rounded-md; }
 .doc .intro { @apply text-xl text-primary dark:text-primary-dark; }
+.doc strong { @apply font-bold text-primary dark:text-primary-dark; }

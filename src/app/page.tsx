@@ -2,11 +2,23 @@ import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { site, posts } from "@/content/site";
 
-function Section({ title, children, wash }: { title: string; children: React.ReactNode; wash?: boolean }) {
+function Section({
+  title,
+  children,
+  wash,
+}: {
+  title: string;
+  children: React.ReactNode;
+  wash?: boolean;
+}) {
   return (
-    <section className={`px-5 py-20 lg:py-28 ${wash ? "bg-card dark:bg-card-dark/40" : ""}`}>
+    <section
+      className={`px-5 py-20 lg:py-28 ${wash ? "bg-card dark:bg-card-dark/40" : ""}`}
+    >
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-bold text-center leading-tight mb-6">{title}</h2>
+        <h2 className="text-4xl lg:text-5xl font-bold text-center leading-tight mb-6">
+          {title}
+        </h2>
         {children}
       </div>
     </section>
@@ -24,17 +36,25 @@ export default function Home() {
     <>
       <section className="px-5 pt-20 pb-24 lg:pt-32 text-center">
         <Logo className="w-32 h-32 lg:w-44 lg:h-44 mx-auto text-link dark:text-link-dark" />
-        <h1 className="mt-6 text-5xl lg:text-7xl font-bold leading-tight">{site.name}</h1>
+        <h1 className="mt-6 text-5xl lg:text-7xl font-bold leading-tight">
+          {site.name}
+        </h1>
         <p className="mt-4 text-2xl lg:text-4xl text-secondary dark:text-secondary-dark leading-snug">
           AIとゲームを、
           <br className="sm:hidden" />
           自分たちの手でつくる。
         </p>
         <div className="mt-10 flex flex-wrap gap-3 justify-center">
-          <Link href="/learn" className="px-6 py-3 rounded-full bg-link dark:bg-link-dark text-white dark:text-wash-dark font-bold text-lg hover:opacity-90">
+          <Link
+            href="/learn"
+            className="px-6 py-3 rounded-full bg-link dark:bg-link-dark text-white dark:text-wash-dark font-bold text-lg hover:opacity-90"
+          >
             活動を知る
           </Link>
-          <Link href="/learn/join" className="px-6 py-3 rounded-full bg-card dark:bg-card-dark font-bold text-lg ring-1 ring-border dark:ring-border-dark hover:bg-border dark:hover:bg-secondary">
+          <Link
+            href="/learn/join"
+            className="px-6 py-3 rounded-full bg-card dark:bg-card-dark font-bold text-lg ring-1 ring-border dark:ring-border-dark hover:bg-border dark:hover:bg-secondary"
+          >
             入部する
           </Link>
         </div>
@@ -55,9 +75,15 @@ export default function Home() {
   }
 }`}</Code>
           <ul className="space-y-4 text-lg">
-            {["Unity / Godot / Webでのゲーム制作", "学内・オンラインのゲームジャムに参加", "作品はGitHubやitch.ioで公開"].map((t) => (
+            {[
+              "Unity / Godot / Webでのゲーム制作",
+              "学内・オンラインのゲームジャムに参加",
+              "作品はGitHubやitch.ioで公開",
+            ].map((t) => (
               <li key={t} className="flex gap-3 items-start">
-                <span className="mt-1 w-6 h-6 shrink-0 rounded-full bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark grid place-items-center text-sm font-bold">✓</span>
+                <span className="mt-1 w-6 h-6 shrink-0 rounded-full bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark grid place-items-center text-sm font-bold">
+                  ✓
+                </span>
                 {t}
               </li>
             ))}
@@ -71,9 +97,15 @@ export default function Home() {
         </p>
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           <ul className="space-y-4 text-lg order-2 lg:order-1">
-            {["強化学習でゲームを攻略するエージェント", "LLMを使った対話NPC", "プロシージャル生成と画像生成AI"].map((t) => (
+            {[
+              "強化学習でゲームを攻略するエージェント",
+              "LLMを使った対話NPC",
+              "プロシージャル生成と画像生成AI",
+            ].map((t) => (
               <li key={t} className="flex gap-3 items-start">
-                <span className="mt-1 w-6 h-6 shrink-0 rounded-full bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark grid place-items-center text-sm font-bold">✓</span>
+                <span className="mt-1 w-6 h-6 shrink-0 rounded-full bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark grid place-items-center text-sm font-bold">
+                  ✓
+                </span>
                 {t}
               </li>
             ))}
@@ -93,10 +125,18 @@ export default function Home() {
       <Section title="最新のお知らせ" wash>
         <div className="grid md:grid-cols-3 gap-6 mt-12">
           {posts.map((p) => (
-            <Link key={p.title} href="/blog" className="block p-6 rounded-2xl bg-wash dark:bg-wash-dark shadow-sm hover:shadow-md ring-1 ring-border dark:ring-border-dark">
-              <time className="text-sm text-secondary dark:text-secondary-dark">{p.date}</time>
+            <Link
+              key={p.title}
+              href="/blog"
+              className="block p-6 rounded-2xl bg-wash dark:bg-wash-dark shadow-sm hover:shadow-md ring-1 ring-border dark:ring-border-dark"
+            >
+              <time className="text-sm text-secondary dark:text-secondary-dark">
+                {p.date}
+              </time>
               <h3 className="mt-2 text-xl font-bold">{p.title}</h3>
-              <p className="mt-2 text-secondary dark:text-secondary-dark">{p.summary}</p>
+              <p className="mt-2 text-secondary dark:text-secondary-dark">
+                {p.summary}
+              </p>
             </Link>
           ))}
         </div>
@@ -105,8 +145,13 @@ export default function Home() {
       <section className="px-5 py-24 text-center">
         <Logo className="w-20 h-20 mx-auto text-link dark:text-link-dark" />
         <h2 className="mt-6 text-4xl lg:text-5xl font-bold">一緒につくろう</h2>
-        <p className="mt-4 text-xl text-secondary dark:text-secondary-dark">経験は問いません。つくりたい気持ちがあれば大歓迎です。</p>
-        <Link href="/learn/join" className="inline-block mt-8 px-6 py-3 rounded-full bg-link dark:bg-link-dark text-white dark:text-wash-dark font-bold text-lg hover:opacity-90">
+        <p className="mt-4 text-xl text-secondary dark:text-secondary-dark">
+          経験は問いません。つくりたい気持ちがあれば大歓迎です。
+        </p>
+        <Link
+          href="/learn/join"
+          className="inline-block mt-8 px-6 py-3 rounded-full bg-link dark:bg-link-dark text-white dark:text-wash-dark font-bold text-lg hover:opacity-90"
+        >
           入部について
         </Link>
       </section>

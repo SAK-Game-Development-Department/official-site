@@ -4,8 +4,11 @@ import { TopNav } from "@/components/TopNav";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: { default: `${site.name} – ${site.tagline}`, template: `%s – ${site.name}` },
-  description: "AIとゲームをつくることを目的としたサークルの公式サイトです。",
+  title: {
+    default: `${site.name} – ${site.tagline}`,
+    template: `%s – ${site.name}`,
+  },
+  description: "ゲーム開発・AI・情報セキュリティ・組み込みで実績作りとスキルアップを目指すサークルの公式サイトです。",
 };
 
 // 描画前にテーマを適用してちらつきを防ぐ
@@ -23,7 +26,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <footer className="border-t border-border dark:border-border-dark bg-wash dark:bg-wash-dark">
           <div className="max-w-6xl mx-auto px-5 py-10 flex flex-col sm:flex-row gap-4 justify-between text-sm text-secondary dark:text-secondary-dark">
             <p>© {site.name}</p>
-            <a href={site.github} className="hover:text-link dark:hover:text-link-dark">GitHub</a>
+            <a
+              href={site.github}
+              className="hover:text-link dark:hover:text-link-dark"
+            >
+              GitHub
+            </a>
           </div>
         </footer>
       </body>
