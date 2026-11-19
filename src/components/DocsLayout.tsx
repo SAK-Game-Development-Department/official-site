@@ -4,7 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { SidebarSection } from "@/content/site";
 
-export function DocsLayout({ sidebar, children }: { sidebar: SidebarSection[]; children: React.ReactNode }) {
+export function DocsLayout({
+  sidebar,
+  children,
+}: {
+  sidebar: SidebarSection[];
+  children: React.ReactNode;
+}) {
   const pathname = usePathname();
   const flat = sidebar.flatMap((s) => s.items);
   const idx = flat.findIndex((i) => i.href === pathname);
@@ -16,7 +22,9 @@ export function DocsLayout({ sidebar, children }: { sidebar: SidebarSection[]; c
       <aside className="hidden lg:block w-72 shrink-0 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto border-r border-border dark:border-border-dark px-4 py-8">
         {sidebar.map((s) => (
           <div key={s.title} className="mb-6">
-            <p className="px-4 mb-2 text-sm font-bold uppercase tracking-wide text-secondary dark:text-secondary-dark">{s.title}</p>
+            <p className="px-4 mb-2 text-sm font-bold uppercase tracking-wide text-secondary dark:text-secondary-dark">
+              {s.title}
+            </p>
             <ul>
               {s.items.map((i) => {
                 const active = i.href === pathname;
@@ -49,11 +57,26 @@ export function DocsLayout({ sidebar, children }: { sidebar: SidebarSection[]; c
   );
 }
 
-function PagerLink({ item, label, right }: { item: { href: string; label: string }; label: string; right?: boolean }) {
+function PagerLink({
+  item,
+  label,
+  right,
+}: {
+  item: { href: string; label: string };
+  label: string;
+  right?: boolean;
+}) {
   return (
-    <Link href={item.href} className={`block p-4 rounded-xl border-2 border-border dark:border-border-dark hover:border-link dark:hover:border-link-dark ${right ? "text-right" : ""}`}>
-      <span className="block text-sm text-secondary dark:text-secondary-dark">{label}</span>
-      <span className="font-bold text-lg text-link dark:text-link-dark">{item.label}</span>
+    <Link
+      href={item.href}
+      className={`block p-4 rounded-xl border-2 border-border dark:border-border-dark hover:border-link dark:hover:border-link-dark ${right ? "text-right" : ""}`}
+    >
+      <span className="block text-sm text-secondary dark:text-secondary-dark">
+        {label}
+      </span>
+      <span className="font-bold text-lg text-link dark:text-link-dark">
+        {item.label}
+      </span>
     </Link>
   );
 }
